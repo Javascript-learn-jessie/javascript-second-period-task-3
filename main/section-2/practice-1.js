@@ -1,5 +1,24 @@
 'use strict';
 
 module.exports = function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  let result=[];
+  let key = collection[0];
+  let countDic={};
+  let object={};
+  let count=0;
+  for(let value of collection){
+    if(countDic[value]==undefined){
+      countDic[value]=1;
+    }else{
+      countDic[value]++;
+    }
+  }
+  for(let key in countDic){
+    object['key']=key;
+    object['count']=countDic[key];
+    result.push(object);
+    object={};
+  }
+  console.log(result);
+  return result;
 }
