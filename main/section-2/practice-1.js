@@ -19,6 +19,5 @@ module.exports = function countSameElements(collection) {
     result.push(object);
     object={};
   }
-  console.log(result);
   return result;
 }

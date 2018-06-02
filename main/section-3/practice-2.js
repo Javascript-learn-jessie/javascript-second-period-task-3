@@ -1,5 +1,14 @@
 'use strict';
 
 module.exports = function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  let B = objectB['value'];
+  collectionA.map(function(item){
+    for(let b of B){
+      if(item['key']==b){
+        let discount=Math.floor(item['count']/3)*1;
+        return item['count']-=discount;
+      }
+    }
+  })
+  return collectionA;
 }
